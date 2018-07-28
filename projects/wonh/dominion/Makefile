@@ -1,5 +1,30 @@
 CFLAGS = -Wall -fpic -coverage -lm -std=c99
 
+RANDOM_TESTS: randomtestadventurer.c randomtestcard1.c  randomtestcard2.c dominion.c rngs.c
+	echo "Result for randomtestadventurer(adventurer card): " >> randomtestadventurer.out
+	echo " " >> randomtestadventurer.out
+	echo "randomTest1.c: " >> randomtestadventurer.out
+	gcc -o randomtestadventurer randomtestadventurer.c dominion.c rngs.c $(CFLAGS)
+	randomtestadventurer >> randomtestadventurer.out
+	gcov dominion.c >> randomtestadventurer.out
+	gcov -b randomtestadventurer.c >> randomtestadventurer.out
+
+	echo "Result for randomtestcard1(smithy card): " >> randomtestcard1.out
+	echo " " >> randomtestcard1.out
+	echo "randomTest2.c: " >> randomtestcard1.out
+	gcc -o randomtestcard1 randomtestcard1.c dominion.c rngs.c $(CFLAGS)
+	randomtestcard1 >> randomtestcard1.out
+	gcov dominion.c >> randomtestcard1.out
+	gcov -b randomtestcard1.c >> randomtestcard1.out
+	
+	echo "Result for randomtestcard2(village card): " >> randomtestcard2.out
+	echo " " >> randomtestcard2.out
+	echo "randomTest3.c: " >> randomtestcard2.out
+	gcc -o randomtestcard2 randomtestcard2.c dominion.c rngs.c $(CFLAGS)
+	randomtestcard2 >> randomtestcard2.out
+	gcov dominion.c >> randomtestcard2.out
+	gcov -b randomtestcard2.c >> randomtestcard2.out
+	
 rngs.o: rngs.h rngs.c
 	gcc -c rngs.c -g  $(CFLAGS)
 
@@ -36,4 +61,4 @@ player: player.c interface.o
 all: playdom player 
 
 clean:
-	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
+	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe randomtestadventurer randomtestcard1 randomtestcard2
