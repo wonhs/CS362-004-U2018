@@ -1,1 +1,7 @@
-Final Project Submission for Joe Beauchesne, Igor Choromanski, and Hyoung Sik Won (ONIDs: beauchjo, choromai, wonh)
+Final Project:
+
+Part-b: Due date is Monday, June 11th at 23:59 pm
+
+
+
+
