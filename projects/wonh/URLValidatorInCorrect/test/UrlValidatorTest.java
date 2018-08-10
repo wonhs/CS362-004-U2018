@@ -20,8 +20,17 @@ public class UrlValidatorTest extends TestCase {
    
    public void testManualTest()
    {
-//You can use this function to implement your manual testing	   
-	   
+	//You can use this function to implement your manual testing	   
+	//You can use this function to implement your manual testing	   
+	   UrlValidator urlVal = new UrlValidator(null, null, 1);
+	   assertTrue(urlVal.isValid("http://xxxxxxxxxxxxxxxx.GOOGLxxxxxxxxxxxxxE.xxxxxxxxxxxxxcom/100000000000000"));
+	   System.out.println("Test Passed");
+
+	   assertTrue(urlVal.isValid("httP://WWW.nachocheesedoritos.com/1000"));
+	   System.out.println("Test Passed");
+
+	   assertTrue(urlVal.isValid("http://www.google.com"));
+	   System.out.println("Test Passed");   
    }
    
    
